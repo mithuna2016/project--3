@@ -2,6 +2,7 @@
 @import 'contact';
 @import 'about';
 @import 'project';
+@import 'menu-name';
 
 
 *{
@@ -14,7 +15,11 @@
    position: relative;
      background-size: cover;  
     background-image: radial-gradient( circle farthest-corner at 50.3% 44.5%,  rgba(116,147,179,1) 0%, rgba(62,83,104,1) 100.2% ) ;
+    width: $width;
+    height: $width;
 }
+
+
     body{
     
     width: $width;
@@ -22,6 +27,10 @@
     font-family: 'Shrikhand';
     margin:nth($size,1) ;
     padding: nth($size,1);
+    
+
+  
+
     
    
 
@@ -104,160 +113,22 @@
 
 
 
-/*menu set up*/
-aside{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    .menu-toggler{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        opacity: 0;
-        &:checked{
-        /* show menu When Checked */
-            ~ .menu{
-                visibility: visible;
-                /* animastion come big  When Checked */
-                >div{
-                    transform: scale(1);
-            transition-duration: 0.5s;
-            
-                }
-            }
-            /* Rotate On Hover When Checked and  maintenance same x
-            */
-            &:hover{
-                + .threeline >div{
-                transform: rotate(225deg);
-            }
-            }
-            /* Turns Lines Into X when checked */
 
-             + .threeline >div{
-            transform: rotate(135deg);
-            &::before ,&::after{
-                top: 0;
-                 transform: rotate(90deg);
-            }
-           
-        }
-        }
-    }
-
-    .threeline{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 60px;
-        height: 60px;
-        padding: 1rem;
-       background-color: $ani;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* make three line */
-        > div {
-            position: relative;
-            width: 100%;
-            height: 3px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-            &::before{
-                         content: '';
-                    position: absolute;
-                  z-index: 1;
-                       top: -10px;
-                      width: 100%;
-                 height: 3px;
-               background: inherit;
-            }
-            &::after{
-                content: '';
-              position: absolute;
-             z-index: 1;
-             top: 10px;
-               width: 100%;
-              height: 3px;
-             background: inherit;
-            }
-
-            
-          }
-        
-    }
-
-     /* make them hidden when we not checked */
-    .menu{
-       
-        position: fixed;
-     
-     width: 100%;
-            height: 100%;
-       visibility: hidden;
-       overflow: hidden;
-            display: flex;
-        align-items: center;
-        justify-content: center;
-         /* style the list items */
-        >div{
-            background-color: $white;
-            border-radius:nth($size,3);
-            width: 90%;
-            height: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: scale(0);
-            transition: all 0.2s ease;
-           
-               >ul{
-                   >li{
-                    color:$nav;
-                    font-size: nth($size,4);
-                    padding:nth($size,4) ;
-                    >a{
-                        color: inherit;
-                        &:hover{
-                            color: $ani;
-                        }
-                  
-                  
-                    }
-                   }
-
-                }
-            
-
-        }
-    }
-}
  
+
+
 
 /*style for footer*/
 footer{
+    
     position: relative;
-    bottom:-30%;
     color: $white;
     text-align: center;
     border-top: 2px solid $ani;
     border-radius: 20%;
-
-  
+    margin-top:30%;
+   
 }
-  
-
-
-
 
   
 
@@ -274,7 +145,9 @@ footer{
 
 @media all and (min-width:800px){
 
-
+footer{
+    bottom:-40% ;
+}
 
   /*my name big font and row dispaly for home page*/
     .profile{
@@ -354,4 +227,3 @@ footer{
             
         }
     }
-    

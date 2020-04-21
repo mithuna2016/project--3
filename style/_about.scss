@@ -1,22 +1,5 @@
 @import 'variable';
-/*contact,about,project heading font size for mobile*/ 
-.name-6{
-    color: $white;
-    font-weight: 900;
-    font-size:nth($size,6) ;
-    .me{
-        color: $nav;
-    }
-}
-.name-5{
-    color: $grayli;
-    font-size: nth($size,4);
-}
 
-.top{
-    top: 100px;
-    position: relative;
-}
 
 /*magin,font size and color for name-3*/ 
 .full{
