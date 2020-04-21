@@ -1,0 +1,371 @@
+@import 'variable';
+@import 'contact';
+@import 'about';
+@import 'project';
+
+
+*{
+    margin: nth($size,1);
+    padding:nth($size,1);
+    text-decoration: none;
+    list-style: none;
+}
+.photo{
+   position: relative;
+     background-size: cover;  
+    background-image: radial-gradient( circle farthest-corner at 50.3% 44.5%,  rgba(116,147,179,1) 0%, rgba(62,83,104,1) 100.2% ) ;
+}
+    body{
+    
+    width: $width;
+    height: $width;
+    font-family: 'Shrikhand';
+    margin:nth($size,1) ;
+    padding: nth($size,1);
+    
+   
+
+}
+/*my name set up*/
+
+
+.profile{
+    margin:  nth($size,4);
+    padding-top: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    overflow: hidden;
+    height: $width;
+    
+
+    img{
+        border: 5px solid $white ;
+    border-radius: 50%;
+    animation:second 2s  ease-in-out  backwards;
+    }
+    
+    h1{
+        -webkit-animation: first 0.8s  both;
+        animation: first 0.8s  both;
+        animation-delay: 2s;
+        .mini{
+            color: $white;
+        }
+        color: $nav;
+       font-size:25px ; }
+       
+    h2{
+        color: $h3color;
+        font-size: nth($size,4);
+    }
+}
+
+/*animation for  my photo*/
+
+@keyframes second {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
+}
+
+
+
+
+
+/*animation for my name*/
+
+@-webkit-keyframes first {
+    0% {
+      letter-spacing: -0.5em;
+      opacity:nth($opasity,2) ;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity:nth($opasity,3) ;
+    }
+  }
+
+@keyframes first {
+    0% {
+        letter-spacing: -0.5em;
+        opacity:nth($opasity,2) ;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity:nth($opasity,3) ;
+      }
+}
+
+
+
+/*menu set up*/
+aside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .menu-toggler{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+        &:checked{
+        /* show menu When Checked */
+            ~ .menu{
+                visibility: visible;
+                /* animastion come big  When Checked */
+                >div{
+                    transform: scale(1);
+            transition-duration: 0.5s;
+            
+                }
+            }
+            /* Rotate On Hover When Checked and  maintenance same x
+            */
+            &:hover{
+                + .threeline >div{
+                transform: rotate(225deg);
+            }
+            }
+            /* Turns Lines Into X when checked */
+
+             + .threeline >div{
+            transform: rotate(135deg);
+            &::before ,&::after{
+                top: 0;
+                 transform: rotate(90deg);
+            }
+           
+        }
+        }
+    }
+
+    .threeline{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+       background-color: $ani;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* make three line */
+        > div {
+            position: relative;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            &::before{
+                         content: '';
+                    position: absolute;
+                  z-index: 1;
+                       top: -10px;
+                      width: 100%;
+                 height: 3px;
+               background: inherit;
+            }
+            &::after{
+                content: '';
+              position: absolute;
+             z-index: 1;
+             top: 10px;
+               width: 100%;
+              height: 3px;
+             background: inherit;
+            }
+
+            
+          }
+        
+    }
+
+     /* make them hidden when we not checked */
+    .menu{
+       
+        position: fixed;
+     
+     width: 100%;
+            height: 100%;
+       visibility: hidden;
+       overflow: hidden;
+            display: flex;
+        align-items: center;
+        justify-content: center;
+         /* style the list items */
+        >div{
+            background-color: $white;
+            border-radius:nth($size,3);
+            width: 90%;
+            height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0);
+            transition: all 0.2s ease;
+           
+               >ul{
+                   >li{
+                    color:$nav;
+                    font-size: nth($size,4);
+                    padding:nth($size,4) ;
+                    >a{
+                        color: inherit;
+                        &:hover{
+                            color: $ani;
+                        }
+                  
+                  
+                    }
+                   }
+
+                }
+            
+
+        }
+    }
+}
+ 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+/*media quary for all*/
+
+@media all and (min-width:800px){
+/*row for menu*/
+aside{
+
+.menu-toggler{
+    &:checked{
+        ~ menu{
+           clear: both;
+        }
+    }
+}
+.threeline{
+clear:inherit;
+
+ 
+}
+
+
+.menu{
+    clear: both;
+ display: flex;
+ flex-direction: column;
+    overflow:visible;
+    visibility:visible;
+    
+     
+}
+}
+
+  /*my name big font and row dispaly for home page*/
+    .profile{
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: center;
+        h1{   
+           font-size:nth($size,6) ; }
+    }
+
+
+ /*padding and boig fnt size for contact page*/
+     .info{
+    .h3{
+        padding: nth($size,5);
+        margin:nth($size,4) ;
+
+        .text{
+            font-size:nth($size,5) ;
+            margin:nth($size,5);
+            padding: nth($size,5)  nth($size,6)
+    }
+    }
+}
+
+      
+    /*contact,about,project heading font size*/ 
+      .name-6{
+        font-size:nth($size,7) ;   
+    }
+    .name-5{
+        font-size: nth($size,6);
+    }
+    
+    
+    /*padding and boig font size,icon  for about page*/ 
+      .full{
+        margin:nth($size,3) ;
+
+        #name-3{
+            
+           font-size: nth($size,4);
+        }
+    }
+    
+    .info2{
+        margin:nth($size,3) ;
+        .line{
+          
+            .icon{
+               font-size:nth($size,5) ;
+               
+            }
+            h4{
+                color: $name;
+                font-size:nth($size,5) ;
+                padding-left: nth($size,3);
+                margin-top:nth($size,3) ;
+            }    
+        }
+    }
+    /* for about page*/ 
+    .clo{ 
+      margin-bottom: nth($size,3);
+      font-size:nth($size,4) ;
+        }
+
+        /* for project page*/
+        .view{
+
+            display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+            
+        }
+    }
+    

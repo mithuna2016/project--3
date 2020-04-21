@@ -1,0 +1,55 @@
+@import 'variable';
+
+
+
+.projhead{
+  text-align: center;
+  
+    
+}
+.view{
+  margin: nth($size,3);
+.bod{ 
+  margin: nth($size,3);
+  padding: nth($size,3);
+        border: 5px solid $nav;
+        border-radius:nth($size,3) ;
+        width:250px ;
+        text-align: center; 
+        
+        a{
+            color:FFFF8D ;
+        }    
+     }
+    }
+   
+   
+   
+    /*animation for git link*/
+    
+    .cv{
+        cursor: pointer;
+        &:hover{
+           
+            animation: git 0.5s linear both;
+        }
+    }
+
+   
+      @keyframes git {
+        0% {
+          transform: translateY(0) rotateX(0) ;       
+          transform-origin: 0% 0%;    
+        }
+       
+        100% {
+          transform: translateY(-100%) rotateX(-180deg) ;    
+          transform-origin: 100% 100%;       
+        }
+      }
+
+
+
+            
+        
+

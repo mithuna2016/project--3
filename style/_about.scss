@@ -1,0 +1,84 @@
+@import 'variable';
+/*contact,about,project heading font size for mobile*/ 
+.name-6{
+    color: $white;
+    font-weight: 900;
+    font-size:nth($size,6) ;
+    .me{
+        color: $nav;
+    }
+}
+.name-5{
+    color: $grayli;
+    font-size: nth($size,4);
+}
+
+.top{
+    top: 100px;
+    position: relative;
+}
+
+/*magin,font size and color for name-3*/ 
+.full{
+ text-align: center;
+    margin:  nth($size,3);
+}
+    #name-3{
+        color: $gary;
+       font-size: 15px;
+    }
+/* style for education and experience */ 
+
+.info2{
+    margin-left: nth($size,3);
+    margin:nth($size,3) ;
+    .line{
+        display: flex;
+        .icon{
+            color: $line;
+           
+        }
+        h4{
+            color: $name;
+            font-size:nth($size,4) ;
+            padding-left: nth($size,2);
+            margin-top:nth($size,2) ;
+        }
+        
+    }
+    .clo{
+        border:  4px inset $nav;
+        border-radius:nth($size,4) ;
+        padding:nth($size,3) ;
+      margin-bottom: nth($size,3);
+      animation: box 1s ease-in forwards;
+        h5{
+           color: $under;
+           text-align: center;
+           font-size:nth($size,4)
+        }
+    }
+   
+    /*same row*/ 
+.row{
+    display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+}
+    
+}
+ /*animation for box */ 
+  @keyframes box {
+    0% {
+     
+              box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e,  0 0 #3e3e3e;
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+     
+              box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e;
+              transform: translateX(-5px) translateY(5px);
+    }
+  }
+  

@@ -1,0 +1,53 @@
+@import 'variable';
+
+/*style and animation for contact infomation*/
+.info{
+    margin:  nth($size,2)  ;
+    justify-items: center;
+    text-align: center;
+    
+    .h3{
+        
+        margin-top:nth($size,4) ;
+        position: relative;
+        padding:nth($size,4)  ;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        color: $light2;
+    font-size:15px;
+            .same{
+                      color: $h4color;
+            }
+
+    .text{
+       position: relative;
+      margin-top:nth($size,4) ;
+        padding: nth($size,5)  nth($size,3) ;
+        border:  4px groove $nav;
+        border-radius: 50px;   
+        animation: text 1s both;
+    }
+    }  
+}
+
+
+
+  /*animation keyframes*/
+
+  
+       
+          @keyframes text {
+            0% {
+                      transform: translateY(-45px);
+                      animation-timing-function: ease-in;
+                      opacity: 0;
+            }
+            
+            100% {
+                      transform: translateY(0px);
+                      animation-timing-function: ease-out;
+                      opacity: 1;
+            }
+          }
