@@ -7,7 +7,6 @@
 
 .info .h3 {
   margin-top: 20px;
-  position: relative;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,14 +19,15 @@
   text-align: center;
   color: FFC400;
   font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
 }
 
 .info .h3 .same {
-  color: E65100;
+  color: #03A9F4;
 }
 
 .info .h3 .text {
-  position: relative;
   margin-top: 20px;
   padding: 30px 10px;
   border: 4px groove black;
@@ -529,27 +529,18 @@ aside .menu > div > ul > li > a:hover {
   color: #03A9F4;
 }
 
+/*style for footer*/
+footer {
+  position: relative;
+  bottom: -30%;
+  color: white;
+  text-align: center;
+  border-top: 2px solid #03A9F4;
+  border-radius: 20%;
+}
+
 /*media quary for all*/
 @media all and (min-width: 800px) {
-  /*row for menu*/
-  aside .menu-toggler:checked ~ menu {
-    clear: both;
-  }
-  aside .threeline {
-    clear: inherit;
-  }
-  aside .menu {
-    clear: both;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    overflow: visible;
-    visibility: visible;
-  }
   /*my name big font and row dispaly for home page*/
   .profile {
     padding-top: 50px;

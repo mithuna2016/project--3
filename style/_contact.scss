@@ -9,7 +9,7 @@
     .h3{
         
         margin-top:nth($size,4) ;
-        position: relative;
+        
         padding:nth($size,4)  ;
         display: flex;
         flex-wrap: wrap;
@@ -17,17 +17,20 @@
         text-align: center;
         color: $light2;
     font-size:15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
             .same{
-                      color: $h4color;
+                      color: $ani;
             }
 
     .text{
-       position: relative;
+      
       margin-top:nth($size,4) ;
         padding: nth($size,5)  nth($size,3) ;
         border:  4px groove $nav;
         border-radius: 50px;   
         animation: text 1s both;
+       
     }
     }  
 }

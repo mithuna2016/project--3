@@ -243,7 +243,18 @@ aside{
 }
  
 
+/*style for footer*/
+footer{
+    position: relative;
+    bottom:-30%;
+    color: $white;
+    text-align: center;
+    border-top: 2px solid $ani;
+    border-radius: 20%;
 
+  
+}
+  
 
 
 
@@ -262,33 +273,8 @@ aside{
 /*media quary for all*/
 
 @media all and (min-width:800px){
-/*row for menu*/
-aside{
-
-.menu-toggler{
-    &:checked{
-        ~ menu{
-           clear: both;
-        }
-    }
-}
-.threeline{
-clear:inherit;
-
- 
-}
 
 
-.menu{
-    clear: both;
- display: flex;
- flex-direction: column;
-    overflow:visible;
-    visibility:visible;
-    
-     
-}
-}
 
   /*my name big font and row dispaly for home page*/
     .profile{
