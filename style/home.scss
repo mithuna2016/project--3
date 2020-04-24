@@ -114,6 +114,172 @@
 
 
 
+/*menu set up*/
+aside{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  .menu-toggler{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      &:checked{
+      /* show menu When Checked */
+          ~ .menu{
+              visibility: visible;
+              /* animastion come big  When Checked */
+              >div{
+                  transform: scale(1);
+          transition-duration: 0.5s;
+          
+              }
+          }
+          /* Rotate On Hover When Checked and  maintenance same x
+          */
+          &:hover{
+              + .threeline >div{
+              transform: rotate(225deg);
+          }
+          }
+          /* Turns Lines Into X when checked */
+
+           + .threeline >div{
+          transform: rotate(135deg);
+          &::before ,&::after{
+              top: 0;
+               transform: rotate(90deg);
+          }
+         
+      }
+      }
+  }
+
+  .threeline{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 60px;
+      height: 60px;
+      padding: 1rem;
+     background-color: $ani;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* make three line */
+      > div {
+          position: relative;
+          width: 100%;
+          height: 3px;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.4s ease;
+          &::before{
+                       content: '';
+                  position: absolute;
+                z-index: 1;
+                     top: -10px;
+                    width: 100%;
+               height: 3px;
+             background: inherit;
+          }
+          &::after{
+              content: '';
+            position: absolute;
+           z-index: 1;
+           top: 10px;
+             width: 100%;
+            height: 3px;
+           background: inherit;
+          }
+
+          
+        }
+      
+  }
+
+   /* make them hidden when we not checked */
+  .menu{
+     
+      position: fixed;
+   
+   width: 100%;
+          height: 100%;
+     visibility: hidden;
+     overflow: hidden;
+          display: flex;
+      align-items: center;
+      justify-content: center;
+       /* style the list items */
+      >div{
+          background-color: $white;
+          border-radius:nth($size,3);
+          width: 90%;
+          height: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: scale(0);
+          transition: all 0.2s ease;
+         
+             >ul{
+                 >li{
+                  color:$nav;
+                  font-size: nth($size,4);
+                  padding:nth($size,4) ;
+                  >a{
+                      color: inherit;
+                      &:hover{
+                          color: $ani;
+                      }
+                
+                
+                  }
+                 }
+
+              }
+          
+
+      }
+  }
+}
+
+
+/*contact,about,project heading font size for mobile*/ 
+.name-6{
+  color: $white;
+  font-weight: 900;
+  font-size:nth($size,6) ;
+  .me{
+      color: $nav;
+  }
+}
+.name-5{
+  color: $grayli;
+  font-size: nth($size,4);
+}
+
+.top{
+  top: 100px;
+  position: relative;
+  bottom: 0;
+}
+
+
+
+
+
+
+
+
  
 
 
