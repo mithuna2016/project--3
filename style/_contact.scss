@@ -1,14 +1,12 @@
 @import 'variable';
 
 /*style and animation for contact infomation*/
-.info{
-    margin:  nth($size,2)  ;
-    justify-items: center;
-    text-align: center;
+
   
     
-    .h3{
-      
+    .contact{
+    height: 54%;
+      border: 20px;
         margin-top:nth($size,4) ;
         padding:nth($size,4)  ;
         display: flex;
@@ -16,14 +14,15 @@
         justify-content: center;
         text-align: center;
         color: $light2;
+      
     font-size:15px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 900;
-            .same{
+            .same-color{
                       color: $ani;
             }
 
-    .text{
+            .contact-metod{
       
       margin-top:nth($size,4) ;
         padding: nth($size,5)  nth($size,3) ;
@@ -33,7 +32,7 @@
        
     }
     }  
-}
+
 
 
 

@@ -2,7 +2,7 @@
 @import 'contact';
 @import 'about';
 @import 'project';
-@import 'menu-name';
+
 
 
 *{
@@ -43,12 +43,13 @@
     padding-top: 200px;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: left;
     justify-content: left;
     overflow: hidden;
     height: $width;
-    
+
 
     img{
         border: 5px solid $white ;
@@ -60,7 +61,7 @@
         -webkit-animation: first 0.8s  both;
         animation: first 0.8s  both;
         animation-delay: 2s;
-        .mini{
+        .profile-color{
             color: $white;
         }
         color: $nav;
@@ -253,25 +254,6 @@ aside{
 }
 
 
-/*contact,about,project heading font size for mobile*/ 
-.name-6{
-  color: $white;
-  font-weight: 900;
-  font-size:nth($size,6) ;
-  .me{
-      color: $nav;
-  }
-}
-.name-5{
-  color: $grayli;
-  font-size: nth($size,4);
-}
-
-.top{
-  top: 100px;
-  position: relative;
-  bottom: 0;
-}
 
 
 
@@ -293,6 +275,8 @@ footer{
     border-top: 2px solid $ani;
     border-radius: 20%;
     margin-top:30%;
+    bottom: 0;
+    
    
 }
 
@@ -312,8 +296,10 @@ footer{
 @media all and (min-width:800px){
 
 footer{
-    bottom:-40% ;
+    bottom:0% ;
 }
+ 
+
 
   /*my name big font and row dispaly for home page*/
     .profile{
@@ -326,70 +312,74 @@ footer{
            font-size:nth($size,6) ; }
     }
 
+/*contact,about,project heading font size*/ 
+ .head-1{
+    font-size:nth($size,7) ;   
+}
+.head-2{
+    font-size: nth($size,6);
+}
+
+
+ /*padding and boig font size,icon  for about page*/ 
+ .full{
+    margin:nth($size,3) ;
+
+    #name-3{
+        
+       font-size: nth($size,4);
+    }
+}
+
+.about{
+  
+    margin:nth($size,3) ;
+    .line{
+      
+        .icon{
+           font-size:nth($size,5) ;
+           
+        }
+        h4{
+            color: $name;
+            font-size:nth($size,5) ;
+            padding-left: nth($size,3);
+            margin-top:nth($size,3) ;
+        }    
+    }
+}
+/* for about page*/ 
+.cloumn{ 
+  margin-bottom: nth($size,3);
+  font-size:nth($size,4) ;
+    }
+
+  /* for project page*/
+  .project{
+    padding-bottom: 500px;
+    display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+    
+}
 
  /*padding and boig fnt size for contact page*/
-     .info{
-    .h3{
+  
+    .contact{
         padding: nth($size,5);
         margin:nth($size,4) ;
 
-        .text{
+        .contact-metod{
             font-size:nth($size,5) ;
             margin:nth($size,5);
             padding: nth($size,5)  nth($size,6)
     }
     }
-}
 
+
+
+    
+   
       
-    /*contact,about,project heading font size*/ 
-      .name-6{
-        font-size:nth($size,7) ;   
-    }
-    .name-5{
-        font-size: nth($size,6);
-    }
-    
-    
-    /*padding and boig font size,icon  for about page*/ 
-      .full{
-        margin:nth($size,3) ;
-
-        #name-3{
-            
-           font-size: nth($size,4);
-        }
-    }
-    
-    .info2{
-        margin:nth($size,3) ;
-        .line{
-          
-            .icon{
-               font-size:nth($size,5) ;
-               
-            }
-            h4{
-                color: $name;
-                font-size:nth($size,5) ;
-                padding-left: nth($size,3);
-                margin-top:nth($size,3) ;
-            }    
-        }
-    }
-    /* for about page*/ 
-    .clo{ 
-      margin-bottom: nth($size,3);
-      font-size:nth($size,4) ;
-        }
-
-        /* for project page*/
-        .view{
-
-            display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      flex-wrap: wrap;
-            
-        }
     }

@@ -2,14 +2,12 @@
 
 
 
-.projhead{
-  text-align: center;
-  
-    
-}
-.view{
+
+.project{
   margin: nth($size,3);
-.bod{ 
+ 
+.project-border{ 
+  
   margin: nth($size,3);
   padding: nth($size,3);
         border: 5px solid $nav;
@@ -27,7 +25,7 @@
    
     /*animation for git link*/
     
-    .cv{
+    .project-hover{
         cursor: pointer;
         &:hover{
            
